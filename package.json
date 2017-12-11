@@ -1,0 +1,32 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "Aplicação teste de banco relacional para o Spotify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify docs/scripts/main.js -o docs/scripts/bundle.js",
+    "dev": "watchify docs/scripts/main.js -o docs/scripts/bundle.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoKnebel/fbd-spotify.git"
+  },
+  "keywords": [
+    "spotify",
+    "ER",
+    "database",
+    "sql"
+  ],
+  "author": "Francisco Knebel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FranciscoKnebel/fbd-spotify/issues"
+  },
+  "homepage": "https://github.com/FranciscoKnebel/fbd-spotify#readme",
+  "dependencies": {
+    "browserify": "^14.5.0",
+    "mysql": "^2.15.0",
+    "watchify": "^3.9.0"
+  }
+}
