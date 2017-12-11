@@ -706,3 +706,55 @@ VALUES
 (33, 9, '2017-06-5'),
 (83, 9, '2017-06-10');
 COMMIT;
+
+/*Usuários*/
+START TRANSACTION;
+INSERT INTO Usuario
+VALUES 
+(0, 'Mateus Salvi', '09fj19ef1', '01@ufrgs.br', 'Porto Alegre', 'BR', null, null, null, null, '2017-12-22', 0),
+(1, 'Francisco Knebel', 'fnu1epfoi1', '02@ufrgs.br', 'Porto Alegre', 'BR', null, null, null, null, '2017-12-23', 0),
+(2, 'Pedro Henrique', 'sndiu19us', '03@ufrgs.br', 'Porto Alegre', 'BR', null, null, null, null, '2017-12-23', 0),
+(3, 'Giovanni Brolesse', '13r08sfah', '04@ufrgs.br', 'Novo Hamburgo', 'BR', null, null, null, null, '2017-12-23', 0),
+(4, 'Karin Becker', 'h1piufu809', '05@ufrgs.br', 'Novo Hamburgo', 'BR', null, null, null, null, '2017-12-23', 0),
+(5, 'Lucas Alves', '1039fsaijf', '06@ufrgs.br', 'Canoas', 'BR', null, null, null, null, '2017-12-24', 0),
+(6, 'Lucas Souza', 'huofdi1wf089', '07@ufrgs.br', 'Canoas', 'BR', null, null, null, null, '2017-12-24', 0);
+COMMIT;
+
+/* Usuarios premium */
+START TRANSACTION;
+INSERT INTO Usuario
+VALUES 
+(7, 'André Reis', 'jj1siojf', '08@ufrgs.br', 'Canoas', 'BR', '1829482958294839', '2020-12', '233', '05', '2017-10-01', 1);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Pagamentos
+VALUES 
+('2017-10-05', 24, 7),
+('2018-11-05', 24, 7),
+('2018-12-05', 24, 7);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Usuario
+VALUES 
+(8, 'Luciano Zancan', '01fsjs1eweee', '09@ufrgs.br', 'Canoas', 'BR', '2910492859403948', '2021-11', '455', '05', '2017-11-04', 1);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Pagamentos
+VALUES 
+('2017-11-05', 24, 8);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Usuario
+VALUES 
+(9, 'Lucas Valandro', 'owee298401', '10@ufrgs.br', 'Canoas', 'BR', '1542687954625154', '2019-12', '453', '10', '2017-12-04', 0); /*Ainda não fez o pagamento*/
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Pagamentos
+VALUES 
+('2017-11-05', 24, 9);
+COMMIT;
