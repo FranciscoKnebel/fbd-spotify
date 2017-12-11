@@ -1,6 +1,7 @@
 /* GENEROS */
 START TRANSACTION;
-INSERT INTO Genero VALUES
+INSERT INTO Genero
+VALUES
 (0, null, 'Rock'),
 (1, null, 'Folk Rock'),
 (2, null, 'Pop'),
@@ -211,6 +212,7 @@ INSERT INTO Musica VALUES
 (72, null, 'Fragments of Time', 279, 0, 11, 5), -- Participacao Artista Todd Edwards
 (73, null, 'Doin It Right', 251, 0, 12, 5), -- Participacao Artista Panda Bear
 (74, null, 'Contact', 381, 0, 13, 5);
+
 COMMIT;
 
 START TRANSACTION;
@@ -221,7 +223,9 @@ VALUES
 (5, null, 'Known for timeless classics such as "Weve Only Just Begun", "Rainy Days and Mondays", "Evergreen", "Just an Old Fashioned Love Song" and "Rainbow Connection", Paul Williams is responsible for what will remain part of our popular culture for many years to come.', 'Paul Williams'),
 (6, null, 'Todd Edwards (born December 9, 1972) is an American house and garage record producer and Grammy winner. He currently resides in Los Angeles.', 'Todd Edwards'),
 (7, null, 'Noah Benjamin Lennox (born July 17, 1978), also known by his moniker Panda Bear, is an American musician, singer-songwriter and co-founding member of the experimental pop band Animal Collective.', 'Panda Bear'),
-(8, null, 'Nile Gregory Rodgers, Jr. (born September 19, 1952) is an American record producer, songwriter, musician, composer, arranger and guitarist. He is the lead guitarist and co-founding member with Bernard Edwards of the band Chic, which has been active since 1976 and was one of the most successful groups of the disco era.', 'Nile Rodgers');
+(8, null, 'Nile Gregory Rodgers, Jr. (born September 19, 1952) is an American record producer, songwriter, musician, composer, arranger and guitarist. He is the lead guitarist and co-founding member with Bernard Edwards of the band Chic, which has been active since 1976 and was one of the most successful groups of the disco era.', 'Nile Rodgers'),
+(9, null, 'Black Sabbath were an English rock band, formed in Birmingham in 1968, by guitarist and main songwriter Tony Iommi, bassist and main lyricist Geezer Butler, singer Ozzy Osbourne, and drummer Bill Ward. Black Sabbath are often cited as pioneers of heavy metal music. The band helped define the genre with releases such as Black Sabbath (1970), Paranoid (1970) and Master of Reality (1971). The band had multiple line-up changes, with Iommi being the only constant member throughout its history.', 'Black Sabbath'),
+(10, null, 'Kyuss was an American rock band, formed in Palm Desert, California, in 1987 by Josh Homme (guitar), John Garcia (vocals), Brant Bjork (drums) and Chris Cockrell (bass). After releasing an EP under the name Sons of Kyuss in 1990, the band shortened its name to Kyuss and recruited Nick Oliveri, replacing Cockrell as bassist. Over the next five years the band released four full-length albums, and one last split EP in 1997 as Kyuss and the newly formed Queens of the Stone Age.', 'Kyuss');
 COMMIT;
 
 START TRANSACTION;
@@ -234,7 +238,7 @@ INSERT INTO Musica_Participacao VALUES
 (5, 68),
 (6, 72),
 (7, 73);
-COMMIT:
+COMMIT;
 
 START TRANSACTION;
 INSERT INTO Album
@@ -246,7 +250,12 @@ START TRANSACTION;
 INSERT INTO Musica VALUES
 (75, null, 'Black Sabbath', 632, 0, 1, 6),
 (76, null, 'The Wizard', 261, 0, 2, 6),
-(77, null, 'Behind the Wall of Sleep', 218, 0, 3, 6);
+(77, null, 'Behind the Wall of Sleep', 218, 0, 3, 6),
+(78, null, 'N.I.B', 364, 0, 4, 6),
+(79, null, 'Evil Woman Dont Play Your Games whit Me', 202, 0, 5, 6),
+(80, null, 'Sleeping Village', 246, 0, 6, 6),
+(81, null, 'Warning', 634, 0, 7, 6),
+(82, null, 'Wicked World', 283, 0 , 8, 6);
 COMMIT;
 
 START TRANSACTION;
@@ -257,10 +266,71 @@ COMMIT;
 
 START TRANSACTION;
 INSERT INTO Musica VALUES
-(78, null, 'Hurricane', 152, 0, 1, 7),
-(79, null, 'One Inch Man', 211, 0, 2, 7),
-(80, null, 'Phototropic', 313, 0, 3, 7),
-(81, null, 'El Rodeo', 329, 0, 4, 7);
+(83, null, 'Hurricane', 152, 0, 1, 7),
+(84, null, 'One Inch Man', 211, 0, 2, 7),
+(85, null, 'Three Ol Boozeroony', 227, 0, 3, 7),
+(86, null, 'Gloria Lewis', 242, 0, 4, 7),
+(87, null, 'Phototropic', 313, 0, 5, 7),
+(88, null, 'El Rodeo', 329, 0, 6, 7),
+(89, null, 'Jumbo Blimp Jumbo', 280, 0, 7, 7),
+(90, null, 'Tangy Zizzle', 219, 0, 8, 7),
+(91, null, 'Size Queen', 227, 0, 9, 7),
+(92, null, 'Catamaran', 180, 0, 10, 7);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Album
+VALUES
+(8, null, 'Welcome to Sky Valley', '1994-05-18', 10);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Musica VALUES
+(93, null, 'Gardenia', 354, 0, 1, 8),
+(94, null, 'Asteroid', 254, 0, 2, 8),
+(95, null, 'Suppa Scoopa And Might Scoop', 315, 0, 3, 8),
+(96, null, '100 Degrees', 98, 0, 4, 8),
+(97, null, 'Space Cadet', 442, 0, 5, 8),
+(98, null, 'Odyssey', 254, 0, 6, 8),
+(99, null, 'Conan Troutman', 75, 0, 7, 8),
+(100, null, 'N.O.', 234, 0, 8, 8),
+(101, null, 'Whitewater', 468, 0, 9, 8);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Album
+VALUES
+(9, null, 'Blues For The Red Sun', '1992-09-22', 10);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Musica VALUES
+(102, null, 'Thumb', 284, 0, 1, 9),
+(103, null, 'Green Machine', 215, 0, 2, 9),
+(104, null, 'Molten Universe', 230, 0, 3, 9),
+(105, null, '50 Million Year Trip', 349, 0, 4, 9),
+(106, null, 'Thong Song', 227, 0, 5, 9),
+(107, null, 'Apothecaries Weight', 321, 0, 6, 9),
+(108, null, 'Caterpillar March', 116, 0, 7, 9),
+(109, null, 'Freedom Run', 427, 0, 8, 9);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Album
+VALUES
+(10, null, 'Wretch', '1991-12-25', 10);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Musica VALUES
+(110, null, 'Love Has Passed Me By', 223, 0, 1, 10),
+(111, null, 'Son of A Bitch', 363, 0, 2, 10),
+(112, null, 'Black Widow', 228, 0, 3, 10),
+(113, null, 'Katzenjammer', 264, 0, 4, 10),
+(114, null, 'Deadly Kiss', 305, 0, 5, 10),
+(115, null, 'The Law', 298, 0, 6, 10),
+(116, null, 'Isolation', 195, 0, 7, 10),
+(117, null, 'Big Bikes', 84, 0, 8, 10);
 COMMIT;
 
 START TRANSACTION;
@@ -271,11 +341,11 @@ VALUES
 (0, 7);
 COMMIT;
 
-/* PODCASTS */
+/*----------- PODCASTS --------------*/
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(11, null, 'This artist does not have a description yet.', 'B9');
+(11, null, 'This artist dont have a desctiprion yet.', 'B9');
 COMMIT;
 
 START TRANSACTION;
@@ -301,7 +371,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(12, null, 'Over 20 years ago, Mike Carruthers created “Something You Should Know” as a short-form radio feature, syndicated to hundreds of radio stations around the U.S and Canada.', 'Mike Carruters');
+(12, null, 'Over 20 years ago, Mike Carruthers created “Something You Should Know” as a short-form radio feature, syndicated to hundreds of radio stations around the U.S and Canada.', 'Mike Carruters'); 
 COMMIT;
 
 START TRANSACTION;
@@ -319,7 +389,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(13, null, 'Aqui você se informa e se diverte com vídeos sobre Apple, Google, Android, Microsoft e tecnologia em geral.', 'Loop Infinito');
+(13, null, 'Aqui você se informa e se diverte com vídeos sobre Apple, Google, Android, Microsoft e tecnologia em geral.', 'Loop Infinito'); 
 COMMIT;
 
 START TRANSACTION;
@@ -337,7 +407,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(14, null, 'O AntiCast é um podcast criado em 2011 por Ivan Mizanzuk, Marcos Beccari e Rafael Ancara. No seu início, era um programa dedicado a falar sobre design, comunicação e cultura. Hoje, é uma rede de podcasts com os mais variados temas.', 'Anticast');
+(14, null, 'O AntiCast é um podcast criado em 2011 por Ivan Mizanzuk, Marcos Beccari e Rafael Ancara. No seu início, era um programa dedicado a falar sobre design, comunicação e cultura. Hoje, é uma rede de podcasts com os mais variados temas.', 'Anticast'); 
 COMMIT;
 
 START TRANSACTION;
@@ -355,7 +425,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(15, null, 'h3h3Productions is an American comedy YouTube channel produced by husband and wife team Ethan and Hila Klein. Their content mostly consists of reaction videos and sketch comedy where they satirize internet culture.', 'h3h3productions');
+(15, null, 'h3h3Productions is an American comedy YouTube channel produced by husband and wife team Ethan and Hila Klein. Their content mostly consists of reaction videos and sketch comedy where they satirize internet culture.', 'h3h3productions'); 
 COMMIT;
 
 START TRANSACTION;
@@ -373,7 +443,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(16, null, 'Não há descrição para este artista', 'Guga Mafra');
+(16, null, 'Não há descrição para este artista', 'Guga Mafra'); 
 COMMIT;
 
 START TRANSACTION;
@@ -391,7 +461,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO Artista
 VALUES
-(17, null, 'ESPN College Football on ABC (branded for sponsorship purposes as ESPN College Football on ABC presented by Walmart) is the branding used for broadcasts of National Collegiate Athletic Association (NCAA)', 'ESPN');
+(17, null, 'ESPN College Football on ABC (branded for sponsorship purposes as ESPN College Football on ABC presented by Walmart) is the branding used for broadcasts of National Collegiate Athletic Association (NCAA)', 'ESPN'); 
 COMMIT;
 
 START TRANSACTION;
@@ -406,43 +476,22 @@ VALUES
 (13, 'Manchester Derby', 1080, '2017-09-09', 9);
 COMMIT;
 
-START TRANSACTION;
-INSERT INTO Podcast
-VALUES
-(0, 'Naruhodo', 'Naruhodo é o podcast para quem tem fome de aprender. Ciência, censo comum, curiosidades e muito mais. Com o leigo curioso, Ken Fujioka, e o cientista PhD, Altay de Souza.', 11),
-(1, 'Something You Should Know', 'Sometimes all it takes is one little fact or one little piece of wisdom to change yout life for ever.', 11),
-(2, 'Loop Matinal', 'Loop Matinal é um podcast do canal Loop Infinito que traz as notícias mais importantes do mundo da tecnologia para quem não tem tempo de ler sites e blogs de tecnologia', 11),
-(3, 'Código Aberto', 'Conversas francas com os profissionais mais influentes do mercado, suas grandes ideias e o que pensam sobre o futuro da mídia, da tecnologia e da comunicação', 11),
-(4, 'Braincast', 'Braincast é o podcast do B9.com.br, que debate a intersecção entre a criatividade, tecnologia, cutura digital, inovação e negócios.', 11),
-(5, 'Anticast', 'Podcast sobre política, história, artes e qualquer outra forma de subversão.', 11),
-(6, 'Cinemático', 'As estreias e destaques da semana, seja nos cinemas, na TV ou no streaming.', 11),
-(7, 'H3 Podcast', 'The official podcast of comedians Ethan & Hila of h3h3productions', 11),
-(8, 'Gugacast', 'Podcast by Guga Mafra', 11),
-(9, 'ESPN FC', 'Fo inside the most popular sport in the world with the ESPN FC crew.', 11);
-COMMIT;
-
-START TRANSACTION;
-INSERT INTO Podcast_Episodio
-VALUES
-(4, 'AOL FOunder Steve Case & How To Interpret Sudies & Statistics', 2160, '2016-08-12', 1),
-(5, '540 - Sexta-Feira, 08/12/2017', 632, '2017-12-08', 2),
-(6, 'Carol Baracar, Head Of Marketing, Spotify', 3420, '2016-04-19', 3),
-(7, 'Eco Moliterno, CCO, Accenture Interactive', 3150, '2017-05-23', 3),
-(8, '#252. O Oligopólio de Silicon Valley', 2454, '2017-11-10', 4),
-(9, 'Anticast 314 - Leonardo da Vinci', 3324, '2017-09-26', 5),
-(10, 'Thor: Ragnarok', 2150, '2017-10-30', 6),
-(11, '#41 - JonTron', 1250, '2017-11-30', 7),
-(12, 'Jogos Sagazes 2 - Gugacast', 1920, '2017-11-29', 8),
-(13, 'Manchester Derby', 1080, '2017-09-09', 9);
-COMMIT;
-
 /* RÁDIOS */
 /* Elemento referência da rádio precisa existir antes de criar uma rádio. */
 -- Rádio 1
 START TRANSACTION;
 INSERT INTO Radio
 VALUES
-(0, 'Rádio do Rock', null, 1, null, null);
+(0, 'Rádio do Rock', null, 1, null, null),
+(1, 'Rádio da banda Kyuss ', null, null, null, 10),
+(2, 'Rádio da Darft Punk', null, null, null, 2),
+(3, '', null, null, null, null),
+(4, '', null, null, null, null),
+(5, '', null, null, null, null),
+(6, '', null, null, null, null),
+(7, '', null, null, null, null),
+(8, '', null, null, null, null),
+(9, '', null, null, null, null);
 -- id da rádio, título, não é de album, é da música id 1, não é de genero nem artista.
 COMMIT;
 
@@ -460,5 +509,52 @@ VALUES -- id da música, id da rádio, data de adição yyyy-mm-dd
 (3, 0, '2017-11-21'),
 (13, 0, '2017-11-21'),
 (11, 0, '2017-11-21'),
-(23, 0, '2017-11-21');
+(54, 0, '2017-11-22'),
+(66, 0, '2017-11-22'),
+(100, 0, '2017-11-22'),
+(19, 0, '2017-11-22'),
+(55, 0, '2017-11-22'),
+(2, 0, '2017-11-22');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Artista
+SET id_radio = 1
+WHERE id_artista = 10;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(63, 1, '2017-11-21'),
+(78, 1, '2017-11-22'),
+(42, 1, '2017-11-23'),
+(25, 1, '2017-11-23'),
+(13, 1, '2017-11-23'),
+(91, 1, '2017-11-23'),
+(112, 1, '2017-11-23'),
+(14, 1, '2017-11-23'),
+(94, 1, '2017-11-25'),
+(64, 1, '2017-11-25');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Artista
+SET id_radio = 2
+WHERE id_artista = 2;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(63, 2, '2016-07-1'),
+(78, 2, '2016-07-2'),
+(42, 2, '2016-08-5'),
+(25, 2, '2016-08-8'),
+(13, 2, '2016-08-10'),
+(91, 2, '2016-08-10'),
+(112, 2, '2016-09-11'),
+(14, 2, '2016-10-11'),
+(94, 2, '2016-10-11'),
+(64, 2, '2016-12-11');
 COMMIT;
