@@ -485,13 +485,13 @@ VALUES
 (0, 'Rádio do Rock', null, 1, null, null),
 (1, 'Rádio da banda Kyuss ', null, null, null, 10),
 (2, 'Rádio da Darft Punk', null, null, null, 2),
-(3, '', null, null, null, null),
-(4, '', null, null, null, null),
-(5, '', null, null, null, null),
-(6, '', null, null, null, null),
-(7, '', null, null, null, null),
-(8, '', null, null, null, null),
-(9, '', null, null, null, null);
+(3, 'Rádio do A Hard Days Night', 2, null, null, null),
+(4, 'Rádio do Pop', null, null, 2, null),
+(5, 'Rádio Hard Rock', null, null, 3, null),
+(6, 'Rádio do Noah', null, null, null, 7),
+(7, 'Radio do Led Zeppelin', null, null, null, 0),
+(8, 'Rádio da A Hard Days Night', null, 23, null, null),
+(9, 'Rádio da Contact', null, 74, null, null);
 -- id da rádio, título, não é de album, é da música id 1, não é de genero nem artista.
 COMMIT;
 
@@ -557,4 +557,152 @@ VALUES
 (14, 2, '2016-10-11'),
 (94, 2, '2016-10-11'),
 (64, 2, '2016-12-11');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Album
+SET id_radio = 3
+WHERE id_Album = 2;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(46, 3, '2017-07-1'),
+(55, 3, '2017-07-2'),
+(12, 3, '2017-08-5'),
+(22, 3, '2017-08-8'),
+(73, 3, '2017-08-10'),
+(86, 3, '2017-08-10'),
+(43, 3, '2017-09-11'),
+(110, 3, '2017-10-11'),
+(10, 3, '2017-10-11'),
+(5, 3, '2017-12-11');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Genero
+SET id_radio = 4
+WHERE id_Genero = 2;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(36, 4, '2017-07-6'),
+(45, 4, '2017-07-6'),
+(52, 4, '2017-08-6'),
+(62, 4, '2017-08-6'),
+(73, 4, '2017-08-10'),
+(26, 4, '2017-08-10'),
+(13, 4, '2017-09-12'),
+(40, 4, '2017-10-13'),
+(87, 4, '2017-10-14'),
+(9, 4, '2017-12-15');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Genero
+SET id_radio = 5
+WHERE id_Genero = 3;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(15, 5, '2017-05-6'),
+(65, 5, '2017-05-6'),
+(72, 5, '2017-05-6'),
+(42, 5, '2017-05-6'),
+(23, 5, '2017-06-10'),
+(34, 5, '2017-07-10'),
+(15, 5, '2017-07-12'),
+(36, 5, '2017-17-13'),
+(86, 5, '2017-17-14'),
+(16, 5, '2017-18-15');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Genero
+SET id_radio = 6
+WHERE id_Genero = 7;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(25, 6, '2017-08-6'),
+(66, 6, '2017-08-6'),
+(75, 6, '2017-08-6'),
+(44, 6, '2017-08-6'),
+(22, 6, '2017-08-10'),
+(33, 6, '2017-08-10'),
+(15, 6, '2017-08-12'),
+(32, 6, '2017-08-13'),
+(81, 6, '2017-08-14'),
+(11, 6, '2017-08-15');
+COMMIT;
+
+
+START TRANSACTION;
+UPDATE Artista
+SET id_radio = 7
+WHERE id_Artista = 0;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(25, 7, '2017-11-6'),
+(36, 7, '2017-11-6'),
+(45, 7, '2017-12-6'),
+(54, 7, '2017-12-6'),
+(62, 7, '2017-12-10'),
+(73, 7, '2017-12-10'),
+(85, 7, '2017-12-12'),
+(52, 7, '2017-12-13'),
+(61, 7, '2017-12-14'),
+(31, 7, '2017-12-15');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Musica
+SET id_radio = 8
+WHERE id_Musica = 23;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(15, 8, '2017-11-1'),
+(16, 8, '2017-11-1'),
+(25, 8 '2017-12-1'),
+(14, 8, '2017-12-1'),
+(22, 8, '2017-12-2'),
+(33, 8, '2017-12-3'),
+(25, 8, '2017-12-3'),
+(42, 8, '2017-12-4'),
+(31, 8, '2017-12-5'),
+(21, 8, '2017-12-10');
+COMMIT;
+
+START TRANSACTION;
+UPDATE Musica
+SET id_radio = 9
+WHERE id_Musica = 74;
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Radio_Composicao
+VALUES 
+(100, 9, '2017-05-1'),
+(102, 9, '2017-06-1'),
+(99, 9 '2017-06-1'),
+(55, 9, '2017-06-1'),
+(89, 9, '2017-06-2'),
+(103, 9, '2017-06-3'),
+(53, 9, '2017-06-3'),
+(22, 9, '2017-06-4'),
+(33, 9, '2017-06-5'),
+(83, 9, '2017-06-10');
 COMMIT;
