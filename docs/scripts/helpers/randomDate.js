@@ -1,5 +1,5 @@
-const randomNumber = require('./randomNumber');
 const pad2 = require('./pad2');
+const randomNumber = require('./randomNumber');
 
 module.exports = () => {
   let day = `${pad2(randomNumber(1, 30))}`;

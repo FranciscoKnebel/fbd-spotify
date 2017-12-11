@@ -1,15 +1,15 @@
 # fbd-spotify
 
 ## Requisites
-* NodeJS
+* NodeJS - __(^8.9.3)__
 
 ## Building
-
 ```
   npm install
   npm run build
 ```
 To build the JavaScript bundle, run `npm run build`. That will create the `docs/scripts/bundle.js` file, using Browserify.
+Connection credentials to the database should be added to `server/api.js`.
 
 ## Development
 ```

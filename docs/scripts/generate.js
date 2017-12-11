@@ -1,14 +1,12 @@
 module.exports = (notificationArea) => {
   document.getElementById('genReproducoes').addEventListener('click', () => {
-    const promise1 = require('./api/musicas/todas')();
-    const promise2 = require('./api/usuarios/todos')();
+    const getMusicas = require('./api/musicas/todas')();
+    const getUsuarios = require('./api/usuarios/todos')();
 
-    const randomNumber = require('./helpers/randomNumber');
-    const randomDate = require('./helpers/randomDate');
-    const randomTime = require('./helpers/randomTime');
+    const { randomNumber, randomDate, randomTime } = require('./helpers');
 
-    promise1.then(musicas => {
-      promise2.then(usuarios => {
+    getMusicas.then(musicas => {
+      getUsuarios.then(usuarios => {
         let insertionsLeft = 100;
         notificationArea.innerHTML = `<h3>Gerando ${insertionsLeft} inserts de reproduções...</h3>`;
         notificationArea.classList.remove('is-invisible');

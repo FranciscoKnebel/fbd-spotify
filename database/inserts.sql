@@ -212,7 +212,6 @@ INSERT INTO Musica VALUES
 (72, null, 'Fragments of Time', 279, 0, 11, 5), -- Participacao Artista Todd Edwards
 (73, null, 'Doin It Right', 251, 0, 12, 5), -- Participacao Artista Panda Bear
 (74, null, 'Contact', 381, 0, 13, 5);
-
 COMMIT;
 
 START TRANSACTION;
@@ -477,14 +476,12 @@ VALUES
 COMMIT;
 
 /* RÁDIOS */
-/* Elemento referência da rádio precisa existir antes de criar uma rádio. */
--- Rádio 1
 START TRANSACTION;
 INSERT INTO Radio
 VALUES
-(0, 'Rádio do Rock', null, 1, null, null),
+(0, 'Rádio do Rock and Roll', null, 1, null, null),
 (1, 'Rádio da banda Kyuss ', null, null, null, 10),
-(2, 'Rádio da Darft Punk', null, null, null, 2),
+(2, 'Rádio do Daft Punk', null, null, null, 2),
 (3, 'Rádio do A Hard Days Night', 2, null, null, null),
 (4, 'Rádio do Pop', null, null, 2, null),
 (5, 'Rádio Hard Rock', null, null, 3, null),
@@ -492,7 +489,6 @@ VALUES
 (7, 'Radio do Led Zeppelin', null, null, null, 0),
 (8, 'Rádio da A Hard Days Night', null, 23, null, null),
 (9, 'Rádio da Contact', null, 74, null, null);
--- id da rádio, título, não é de album, é da música id 1, não é de genero nem artista.
 COMMIT;
 
 START TRANSACTION;
