@@ -147,7 +147,7 @@ create table Usuario (
      email varchar(60) not null,
      cidade varchar(60),
      pais char(2),
-     inf_nro_cartao bigint,
+     inf_nro_cartao char(16),
      inf_data_expiracao date,
      inf_cod_seguranca int,
      inf_data_renovacao date,
