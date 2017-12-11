@@ -2,11 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>FBD Spotify</title>
+    <title>FBD - Spotify</title>
 
-    <script src="scripts/bundle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <h1>Test</h1>
+    <section class="section">
+      <div class="container margin-bottom">
+        <h1 class="title">
+          FBD - Spotify
+        </h1>
+        <p class="subtitle">
+          Uma implementação relacional sobre o <strong>Spotify</strong>!
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="notification">
+          <a class="button" id="genReproducoes">
+            Gerar Reproduções
+          </a>
+        </div>
+
+        <div class="notification">
+          <a class="button is-medium is-primary" id="query1">
+            Button
+          </a>
+
+          <a class="button is-medium is-link" id="query2">
+            Button
+          </a>
+
+          <a class="button is-medium is-info" id="query3">
+            Button
+          </a>
+
+          <a class="button is-medium is-success" id="query4">
+            Button
+          </a>
+
+          <a class="button is-medium is-warning" id="query5">
+            Button
+          </a>
+
+          <a class="button is-medium is-danger" id="query6">
+            Button
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-fluid">
+        <div class="notification is-invisible" id="notificationarea"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>fbd-spotify</strong> by <a href="https://github.com/FranciscoKnebel/">Francisco Knebel</a> and <a href="https://github.com/Teuszila/">Mateus Salvi</a>.
+            The source code is licensed <a href="https://github.com/FranciscoKnebel/fbd-spotify/blob/master/LICENSE.md">MIT</a>.
+          </p>
+          <p>
+            Fork us at <a href="https://github.com/FranciscoKnebel/fbd-spotify">GitHub</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="scripts/bundle.js"></script>
   </body>
 </html>

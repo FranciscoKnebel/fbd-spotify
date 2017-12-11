@@ -8,18 +8,25 @@ const connection = mysql.createConnection({
 });
 
 module.exports = (app) => {
+  connection.connect();
+
   require('./comandos')(app, connection);
 
   app.get('/api/musicas/todas', (req, res) => {
-    connection.connect();
-
     connection.query('SELECT * FROM Musica', (error, results, fields) => {
       if (error)
         throw error;
 
       res.send({ results, fields });
+    });
+  });
 
-      connection.end();
+  app.get('/api/usuarios/todos', (req, res) => {
+    connection.query('SELECT * FROM Usuario', (error, results, fields) => {
+      if (error)
+        throw error;
+
+      res.send({ results, fields });
     });
   });
 }

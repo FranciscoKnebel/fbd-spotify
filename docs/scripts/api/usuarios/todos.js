@@ -1,5 +1,5 @@
 module.exports = () => {
-  fetch(`api/musicas/todas`)
+  return fetch(`api/usuarios/todos`)
     .then((res) => {
       if(res.ok) {
         return res.json();
@@ -7,8 +7,6 @@ module.exports = () => {
         throw new Error(`Network response was not ok. Status: ${res.status}. Text: ${res.statusText}.`);
       }
     })
-    .then(musicas => {
-      console.log(musicas);
-    })
+    .then(usuarios => usuarios.results)
     .catch(err => console.error(err));
 }

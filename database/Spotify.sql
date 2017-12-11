@@ -18,7 +18,7 @@ create table Concerto (
     titulo varchar(60) not null,
     local varchar(60) not null,
     preco decimal(4,2) not null,
-    data_e_hora date not null,
+    data_e_hora datetime not null,
     id_artista int not null,
     constraint ID_Concerto_ID primary key (id_concerto));
 
@@ -57,9 +57,9 @@ create table Musica_Participacao (
 
 create table Reproducao (
      id_usuario int not null,
-     data_e_hora date not null,
+     data_e_hora datetime not null,
      id_musica int not null,
-     constraint FKRep_Usu_ID primary key (id_usuario));
+     constraint ID_Reproducao_ID primary key (id_usuario, data_e_hora, id_musica));
 
 create table Categorizacao (
     id_genero int not null,
@@ -110,7 +110,7 @@ create table Podcast (
 
 create table Podcast_Episodio (
      id_episodio int not null,
-     nome varchar(50) not null,
+     nome varchar(100) not null,
      duracao int not null,
      data date not null,
      id_podcast int not null,
@@ -148,9 +148,9 @@ create table Usuario (
      cidade varchar(60),
      pais char(2),
      inf_nro_cartao char(16),
-     inf_data_expiracao date,
-     inf_cod_seguranca int,
-     inf_data_renovacao date,
+     inf_data_expiracao char(7),
+     inf_cod_seguranca char(3),
+     inf_data_renovacao char(2),
      data_criacao date not null,
      tipo int not null,
      constraint ID_Usuario_ID primary key (id_usuario));
@@ -402,11 +402,8 @@ create unique index ID_Propaganda_IND
 create index FKPublicacao_IND
      on Propaganda (id_anunciante);
 
-create unique index FKRep_Usu_IND
-     on Reproducao (id_usuario);
-
-create index FKRep_Mus_IND
-     on Reproducao (id_musica);
+create unique index ID_Reproducao_ID
+     on Reproducao (id_usuario, data_e_hora, id_musica);
 
 create unique index ID_Radio_IND
      on Radio (id_radio);

@@ -1,3 +1,4 @@
-const gerarReproducoes = require('./gerarReproducoes');
+const notificationArea = document.getElementById('notificationarea');
 
-gerarReproducoes();
+require('./comandos')(notificationArea);
+require('./generate')(notificationArea);
