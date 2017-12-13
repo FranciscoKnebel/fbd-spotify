@@ -755,6 +755,37 @@ VALUES
 ('2017-11-05', 24, 9);
 COMMIT;
 
+/* Videos */
+START TRANSACTION;
+INSERT INTO Video
+VALUES
+(0, 'Video Rock', 325, '2017-12-21', 'Video mostrando sobre a banda de rock', 2),
+(1, 'Video Pop', 573, '2017-11-19', 'Tudo que voce precisa saber sobre a banda pop do momento', 3),
+(2, 'Video Concerto', 483, '2017-10-24', 'Concerto que acontecerá no dia 29!', 2),
+(3, 'Video Sábado', 120, '2017-09-10', 'A banda curtindo um Sábado de descanço', 5),
+(4, 'Video Promoção', 324, '2017-08-15', 'Promoção para o show, veja o video!', 7),
+(5, 'Video Estádio', 192, '2017-11-19', 'Um pouco do local onde ocorrerá o show da banda', 10),
+(6, 'Video Férias', 432, '2017-10-21', 'Nada como as férias, viaje junto com a banda', 9),
+(7, 'Video On The Road', 420, '2017-08-23', 'Fique por dentro de tudo que acontece entre um show e outro!', 6),
+(8, 'Video Backstage', 219, '2017-06-22', 'Quer saber o que rola no backstage? Se liga só!', 0),
+(9, 'Video Fãs', 112, '2017-12-21', 'Agradecimendo feito pela banda durante o show.', 4);
+COMMIT;
+/* Codigo do video, nome, duração, data de adição, descrição, artista relacionado */
+
+/* Propagandas e anunciantes */
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(0, 'Spotify');
+COMMIT;
+/* Código do anunciante, anunciante */
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(0, 'Aproveite o desconto', 30, 224, 4000, 0);
+COMMIT;
+/* Codigo da propaganda, titulo, duraçao, reproduções, investimento, codigo do anunciante */
 
 /* Reproduções */
 START TRANSACTION; INSERT INTO Reproducao VALUES ('2', '2017-10-27 03:41:11', '32'); COMMIT;
