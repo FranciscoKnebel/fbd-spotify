@@ -1,6 +1,18 @@
 module.exports = (app, connection) => {
   app.get('/query/1', (req, res) => {
-    connection.query('SELECT * FROM Musica', (error, results, fields) => {
+    // Artistas mais ouvidos por um usuário (artista, album, musica, reproduções, usuario)
+    connection.query(
+      `
+        SELECT count(Artista.id_artista) as reproducoes, Artista.nome as artista
+        FROM Usuario
+        JOIN Reproducao ON (Usuario.id_usuario = Reproducao.id_usuario)
+        NATURAL JOIN Musica
+        JOIN Album USING (id_album)
+        JOIN Artista USING (id_artista)
+        WHERE Usuario.nome = 'Francisco Knebel'
+        GROUP BY Artista.id_artista
+        ORDER BY reproducoes DESC
+      `, (error, results, fields) => {
       res.send({ error, results, fields });
     });
   });
@@ -18,6 +30,8 @@ module.exports = (app, connection) => {
   });
 
   app.get('/query/4', (req, res) => {
+    // As cidades onde a música 'Get Lucky' é ouvida com o número de reproduções,
+    // ordenando pelo número de reproduções em forma decrescente.
     connection.query(
       `
         SELECT count(cidade) as reproducoes, cidade
@@ -32,10 +46,11 @@ module.exports = (app, connection) => {
   });
 
   app.get('/query/5', (req, res) => {
+    // Todas as músicas do gênero Rock (Gênero, Categorização, Álbum, Música)
     connection.query(
       `
-        select *
-        from Musica
+        SELECT *
+        FROM Musica
         WHERE Musica.id_album IN
         (
           SELECT Album.id_album
