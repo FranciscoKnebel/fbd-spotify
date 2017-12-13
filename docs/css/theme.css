@@ -1,3 +1,7 @@
 .margin-bottom {
   margin-bottom: 1rem;
 }
+
+#notificationarea p {
+  margin: 1em;
+}

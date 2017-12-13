@@ -246,6 +246,13 @@ VALUES
 COMMIT;
 
 START TRANSACTION;
+INSERT INTO Categorizacao
+VALUES
+(0, 6),
+(4, 6);
+COMMIT;
+
+START TRANSACTION;
 INSERT INTO Musica VALUES
 (75, null, 'Black Sabbath', 632, 0, 1, 6),
 (76, null, 'The Wizard', 261, 0, 2, 6),
@@ -261,6 +268,12 @@ START TRANSACTION;
 INSERT INTO Album
 VALUES
 (7, null, '...And the Circus Leaves Town', '1995-07-11', 10);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Categorizacao
+VALUES
+(0, 7);
 COMMIT;
 
 START TRANSACTION;
@@ -284,6 +297,12 @@ VALUES
 COMMIT;
 
 START TRANSACTION;
+INSERT INTO Categorizacao
+VALUES
+(0, 8);
+COMMIT;
+
+START TRANSACTION;
 INSERT INTO Musica VALUES
 (93, null, 'Gardenia', 354, 0, 1, 8),
 (94, null, 'Asteroid', 254, 0, 2, 8),
@@ -300,6 +319,13 @@ START TRANSACTION;
 INSERT INTO Album
 VALUES
 (9, null, 'Blues For The Red Sun', '1992-09-22', 10);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Categorizacao
+VALUES
+(5, 9),
+(0, 9);
 COMMIT;
 
 START TRANSACTION;
@@ -321,6 +347,12 @@ VALUES
 COMMIT;
 
 START TRANSACTION;
+INSERT INTO Categorizacao
+VALUES
+(4, 10);
+COMMIT;
+
+START TRANSACTION;
 INSERT INTO Musica VALUES
 (110, null, 'Love Has Passed Me By', 223, 0, 1, 10),
 (111, null, 'Son of A Bitch', 363, 0, 2, 10),
@@ -330,18 +362,6 @@ INSERT INTO Musica VALUES
 (115, null, 'The Law', 298, 0, 6, 10),
 (116, null, 'Isolation', 195, 0, 7, 10),
 (117, null, 'Big Bikes', 84, 0, 8, 10);
-COMMIT;
-
-START TRANSACTION;
-INSERT INTO Categorizacao
-VALUES
-(0, 6),
-(4, 6),
-(0, 7),
-(0, 8),
-(5, 9),
-(0, 9),
-(4, 10);
 COMMIT;
 
 /*----------- PODCASTS --------------*/
