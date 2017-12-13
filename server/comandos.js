@@ -12,7 +12,7 @@ module.exports = (app, connection) => {
   });
 
   app.get('/query/3', (req, res) => {
-    connection.query('SELECT * FROM Artista', (error, results, fields) => {
+    connection.query('SELECT * FROM Reproducao', (error, results, fields) => {
       res.send({ error, results, fields });
     });
   });

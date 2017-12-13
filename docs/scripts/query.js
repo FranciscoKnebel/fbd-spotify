@@ -1,7 +1,9 @@
 module.exports = (notificationArea, query) => {
   let table = '';
 
-  document.getElementById(query).addEventListener('click', () => {
+  let queryButton = document.getElementById(query)
+
+  queryButton.addEventListener('click', () => {
     fetch(query)
       .then((res) => {
         if(res.ok) {
@@ -11,9 +13,9 @@ module.exports = (notificationArea, query) => {
         }
       })
       .then(res => {
-        document
-          .getElementById('notificationtitle')
-          .innerHTML = `<h1><strong>${query}</strong> - Rows: <strong>${res.results.length}</strong>.</h1>`;
+        const title = document.getElementById('notificationtitle');
+        title.innerHTML = `<h1 class="subtitle"><strong>${queryButton.innerHTML}</strong><br>Tuplas: <strong>${res.results.length}</strong>.</h1>`;
+        title.classList.remove('is-invisible');
 
         let head = '';
         for (field of res.fields) {
