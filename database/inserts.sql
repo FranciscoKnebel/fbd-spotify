@@ -222,9 +222,7 @@ VALUES
 (5, null, 'Known for timeless classics such as "Weve Only Just Begun", "Rainy Days and Mondays", "Evergreen", "Just an Old Fashioned Love Song" and "Rainbow Connection", Paul Williams is responsible for what will remain part of our popular culture for many years to come.', 'Paul Williams'),
 (6, null, 'Todd Edwards (born December 9, 1972) is an American house and garage record producer and Grammy winner. He currently resides in Los Angeles.', 'Todd Edwards'),
 (7, null, 'Noah Benjamin Lennox (born July 17, 1978), also known by his moniker Panda Bear, is an American musician, singer-songwriter and co-founding member of the experimental pop band Animal Collective.', 'Panda Bear'),
-(8, null, 'Nile Gregory Rodgers, Jr. (born September 19, 1952) is an American record producer, songwriter, musician, composer, arranger and guitarist. He is the lead guitarist and co-founding member with Bernard Edwards of the band Chic, which has been active since 1976 and was one of the most successful groups of the disco era.', 'Nile Rodgers'),
-(9, null, 'Black Sabbath were an English rock band, formed in Birmingham in 1968, by guitarist and main songwriter Tony Iommi, bassist and main lyricist Geezer Butler, singer Ozzy Osbourne, and drummer Bill Ward. Black Sabbath are often cited as pioneers of heavy metal music. The band helped define the genre with releases such as Black Sabbath (1970), Paranoid (1970) and Master of Reality (1971). The band had multiple line-up changes, with Iommi being the only constant member throughout its history.', 'Black Sabbath'),
-(10, null, 'Kyuss was an American rock band, formed in Palm Desert, California, in 1987 by Josh Homme (guitar), John Garcia (vocals), Brant Bjork (drums) and Chris Cockrell (bass). After releasing an EP under the name Sons of Kyuss in 1990, the band shortened its name to Kyuss and recruited Nick Oliveri, replacing Cockrell as bassist. Over the next five years the band released four full-length albums, and one last split EP in 1997 as Kyuss and the newly formed Queens of the Stone Age.', 'Kyuss');
+(8, null, 'Nile Gregory Rodgers, Jr. (born September 19, 1952) is an American record producer, songwriter, musician, composer, arranger and guitarist. He is the lead guitarist and co-founding member with Bernard Edwards of the band Chic, which has been active since 1976 and was one of the most successful groups of the disco era.', 'Nile Rodgers');
 COMMIT;
 
 START TRANSACTION;
@@ -237,6 +235,12 @@ INSERT INTO Musica_Participacao VALUES
 (5, 68),
 (6, 72),
 (7, 73);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Artista
+VALUES
+(9, null, 'Black Sabbath were an English rock band, formed in Birmingham in 1968, by guitarist and main songwriter Tony Iommi, bassist and main lyricist Geezer Butler, singer Ozzy Osbourne, and drummer Bill Ward. Black Sabbath are often cited as pioneers of heavy metal music. The band helped define the genre with releases such as Black Sabbath (1970), Paranoid (1970) and Master of Reality (1971). The band had multiple line-up changes, with Iommi being the only constant member throughout its history.', 'Black Sabbath');
 COMMIT;
 
 START TRANSACTION;
@@ -262,6 +266,12 @@ INSERT INTO Musica VALUES
 (80, null, 'Sleeping Village', 246, 0, 6, 6),
 (81, null, 'Warning', 634, 0, 7, 6),
 (82, null, 'Wicked World', 283, 0 , 8, 6);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Artista
+VALUES
+(10, null, 'Kyuss was an American rock band, formed in Palm Desert, California, in 1987 by Josh Homme (guitar), John Garcia (vocals), Brant Bjork (drums) and Chris Cockrell (bass). After releasing an EP under the name Sons of Kyuss in 1990, the band shortened its name to Kyuss and recruited Nick Oliveri, replacing Cockrell as bassist. Over the next five years the band released four full-length albums, and one last split EP in 1997 as Kyuss and the newly formed Queens of the Stone Age.', 'Kyuss');
 COMMIT;
 
 START TRANSACTION;
@@ -810,6 +820,71 @@ VALUES
 (0, 'Aproveite o desconto', 30, 224, 4000, 0);
 COMMIT;
 /* Codigo da propaganda, titulo, duraçao, reproduções, investimento, codigo do anunciante */
+
+/* Playlists */
+START TRANSACTION;
+INSERT INTO Playlist
+VALUES
+(0, 'Músicas para ouvir na chuva');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(0, 1, '2017-12-12');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(4, 0, '2017-12-12'),
+(7, 0, '2017-12-12'),
+(27, 0, '2017-12-12'),
+(68, 0, '2017-12-12');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('0', '9', '2017-12-12'),
+('0', '6', '2017-12-13'),
+('0', '7', '2017-12-13'),
+('0', '3', '2017-12-13'),
+('0', '0', '2017-12-13');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist
+VALUES
+(1, 'Best of The Beatles');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(1, 0, '2017-12-12');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(23, 1, '2017-12-12'),
+(29, 1, '2017-12-12'),
+(48, 1, '2017-12-12'),
+(52, 1, '2017-12-12'),
+(59, 1, '2017-12-13');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('1', '9', '2017-12-12'),
+('1', '8', '2017-12-12'),
+('1', '5', '2017-12-13'),
+('1', '4', '2017-12-13'),
+('1', '2', '2017-12-13'),
+('1', '3', '2017-12-13');
+COMMIT;
 
 /* Reproduções */
 START TRANSACTION; INSERT INTO Reproducao VALUES ('2', '2017-10-27 03:41:11', '32'); COMMIT;

@@ -29,4 +29,27 @@ module.exports = (app) => {
       res.send({ results, fields });
     });
   });
+
+  app.get('/api/playlists/todas', (req, res) => {
+    connection.query('SELECT * FROM Playlist', (error, results, fields) => {
+      if (error)
+        throw error;
+
+      res.send({ results, fields });
+    });
+  });
+
+  app.get('/api/playlists/creator/:id', (req, res) => {
+    connection.query(
+      `
+        SELECT *
+        FROM Playlist_Criacao
+        WHERE id_playlist = ${req.params.id}
+      `, (error, results, fields) => {
+      if (error)
+        throw error;
+
+      res.send({ results, fields });
+    });
+  });
 }
