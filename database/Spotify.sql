@@ -17,7 +17,7 @@ create table Concerto (
     id_concerto int not null,
     titulo varchar(60) not null,
     local varchar(60) not null,
-    preco decimal(4,2) not null,
+    preco decimal(9,2) not null,
     data_e_hora datetime not null,
     id_artista int not null,
     constraint ID_Concerto_ID primary key (id_concerto));
