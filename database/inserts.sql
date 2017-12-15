@@ -806,21 +806,6 @@ VALUES
 COMMIT;
 /* Codigo do video, nome, duração, data de adição, descrição, artista relacionado */
 
-/* Propagandas e anunciantes */
-START TRANSACTION;
-INSERT INTO Anunciante
-VALUES
-(0, 'Spotify');
-COMMIT;
-/* Código do anunciante, anunciante */
-
-START TRANSACTION;
-INSERT INTO Propaganda
-VALUES
-(0, 'Aproveite o desconto', 30, 224, 4000, 0);
-COMMIT;
-/* Codigo da propaganda, titulo, duraçao, reproduções, investimento, codigo do anunciante */
-
 /* Playlists */
 START TRANSACTION;
 INSERT INTO Playlist
@@ -904,7 +889,7 @@ VALUES
 (100, 2, '2017-12-11'),
 (103, 2, '2017-12-11'),
 (98, 2, '2017-12-14'),
-(100, 2, '2017-12-14');
+(101, 2, '2017-12-14');
 COMMIT;
 
 START TRANSACTION;
