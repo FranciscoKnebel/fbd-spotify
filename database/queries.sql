@@ -15,19 +15,22 @@ ORDER BY reproducoes DESC
 /* QUERY 2 */
 -- Todas as musicas do Daft Punk que não tem participação de outro artista --
 SELECT m.titulo
-FROM (artista as a join album as alb ON alb.id_artista = a.id_artista)
-join musica as m ON alb.id_album = m.id_album
+FROM Artista as a
+JOIN Album as alb ON (alb.id_artista = a.id_artista)
+JOIN Musica as m ON (alb.id_album = m.id_album)
 WHERE a.nome = 'Daft Punk' AND NOT EXISTS
-	(
+(
 	SELECT *
-    FROM musica_participacao as mp
-    WHERE mp.id_musica = m.id_musica
-    );
+  FROM Musica_Participacao as mp
+  WHERE mp.id_musica = m.id_musica
+);
 
 /* QUERY 3 */
--- Concertos dos artistas na mesma cidade do usuário Mateus Salvi e a data do concerto(Concerto, artista, usuario)
+-- Concertos dos artistas na mesma cidade do usuário Mateus Salvi e a data do concerto (Concerto, artista, usuario)
 SELECT a.nome, c.titulo, c.data_e_hora
-FROM (artista as a natural join concerto as c) join usuario as u on c.local = u.cidade
+FROM Artista as a
+NATURAL JOIN concerto as c
+JOIN Usuario as u ON (c.local = u.cidade)
 WHERE u.nome = 'Mateus Salvi';
 
 /* QUERY 4 */
@@ -57,5 +60,6 @@ WHERE Musica.id_album IN
 /* QUERY 6 */
 -- Todas musicas que aparecem em alguma playlist --
 SELECT DISTINCT(m.titulo)
-FROM (playlist AS p JOIN playlist_composicao AS pc ON p.id_playlist = pc.id_playlist)
-JOIN musica as m ON m.id_musica = pc.id_musica;
+FROM Playlist AS p
+JOIN Playlist_Composicao AS pc ON (p.id_playlist = pc.id_playlist)
+JOIN Musica as m ON (m.id_musica = pc.id_musica);

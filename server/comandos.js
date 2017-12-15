@@ -5,7 +5,8 @@ module.exports = (app, connection) => {
       `
         SELECT count(Artista.id_artista) as reproducoes, Artista.nome as artista
         FROM Usuario
-        JOIN Reproducao ON (Usuario.id_usuario = Reproducao.id_usuario)
+        JOIN Reproducao ON
+          (Usuario.id_usuario = Reproducao.id_usuario)
         NATURAL JOIN Musica
         JOIN Album USING (id_album)
         JOIN Artista USING (id_artista)
@@ -18,13 +19,34 @@ module.exports = (app, connection) => {
   });
 
   app.get('/query/2', (req, res) => {
-    connection.query('SELECT * FROM Album', (error, results, fields) => {
+    // Todas as musicas do Daft Punk que não tem participação de outro artista
+    connection.query(
+      `
+        SELECT m.titulo
+        FROM Artista as a
+        JOIN Album as alb ON (alb.id_artista = a.id_artista)
+        JOIN Musica as m ON (alb.id_album = m.id_album)
+        WHERE a.nome = 'Daft Punk' AND NOT EXISTS
+        (
+        	SELECT *
+          FROM Musica_Participacao as mp
+          WHERE mp.id_musica = m.id_musica
+        );
+      `, (error, results, fields) => {
       res.send({ error, results, fields });
     });
   });
 
   app.get('/query/3', (req, res) => {
-    connection.query('SELECT * FROM Reproducao', (error, results, fields) => {
+    // Concertos dos artistas na mesma cidade do usuário Mateus Salvi e a data do concerto (Concerto, artista, usuario)
+    connection.query(
+      `
+        SELECT a.nome, c.titulo, c.data_e_hora
+        FROM Artista as a
+        NATURAL JOIN Concerto as c
+        JOIN Usuario as u ON (c.local = u.cidade)
+        WHERE u.nome = 'Mateus Salvi';
+      `, (error, results, fields) => {
       res.send({ error, results, fields });
     });
   });
@@ -36,7 +58,8 @@ module.exports = (app, connection) => {
       `
         SELECT count(cidade) as reproducoes, cidade
         FROM Reproducao
-        JOIN Musica ON (Musica.titulo = 'Get Lucky' AND Reproducao.id_musica = Musica.id_musica)
+        JOIN Musica ON
+          (Musica.titulo = 'Get Lucky' AND Reproducao.id_musica = Musica.id_musica)
         JOIN Usuario USING (id_usuario)
         GROUP BY cidade
         ORDER BY reproducoes DESC
@@ -66,7 +89,14 @@ module.exports = (app, connection) => {
   });
 
   app.get('/query/6', (req, res) => {
-    connection.query('SELECT * FROM Genero', (error, results, fields) => {
+    // Todas musicas que aparecem em alguma playlist
+    connection.query(
+      `
+        SELECT DISTINCT(m.titulo)
+        FROM Playlist AS p
+        JOIN Playlist_Composicao AS pc ON (p.id_playlist = pc.id_playlist)
+        JOIN Musica as m ON (m.id_musica = pc.id_musica);
+      `, (error, results, fields) => {
       res.send({ error, results, fields });
     });
   });

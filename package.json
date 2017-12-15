@@ -8,7 +8,8 @@
     "build": "browserify docs/scripts/main.js -o docs/scripts/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "nodemon": "nodemon server.js",
-    "watchify": "watchify docs/scripts/main.js -o docs/scripts/bundle.js -v"
+    "watchify": "watchify docs/scripts/main.js -o docs/scripts/bundle.js -v",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -27,14 +28,17 @@
   },
   "homepage": "https://github.com/FranciscoKnebel/fbd-spotify#readme",
   "dependencies": {
-    "concurrently": "^3.5.1",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
     "mysql": "^2.15.0"
   },
   "devDependencies": {
     "browserify": "^14.5.0",
+    "concurrently": "^3.5.1",
     "nodemon": "^1.12.5",
     "watchify": "^3.9.0"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }
