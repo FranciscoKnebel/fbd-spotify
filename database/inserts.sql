@@ -886,6 +886,255 @@ VALUES
 ('1', '3', '2017-12-13');
 COMMIT;
 
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(2, 'Singles');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(2, 4, '2017-12-24');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(100, 2, '2017-12-11'),
+(103, 2, '2017-12-11'),
+(98, 2, '2017-12-14'),
+(100, 2, '2017-12-14');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('2', '6', '2017-12-13'),
+('2', '9', '2017-12-13');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(3, 'Hora Acústica');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(3, 6, '2017-11-20');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(45, 3, '2017-11-11'),
+(56, 3, '2017-11-11'),
+(32, 3, '2017-11-14'),
+(77, 3, '2017-11-14'),
+(61, 3, '2017-12-14'),
+(44, 3, '2017-12-14');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('3', '5', '2017-11-10'),
+('3', '2', '2017-11-05'),
+('3', '6', '2017-12-10'),
+('3', '3', '2017-12-09');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(4, 'Hora de dormir');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(4, 9, '2017-10-15');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(33, 4, '2017-11-11'),
+(54, 4, '2017-11-11'),
+(35, 4, '2017-11-14'),
+(90, 4, '2017-11-14'),
+(02, 4, '2017-12-14'),
+(03, 4, '2017-12-14');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('4', '2', '2017-12-10'),
+('4', '1', '2017-12-15'),
+('4', '0', '2017-12-16'),
+('4', '6', '2017-12-19');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(5, 'Pra dançar');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(5, 0, '2017-11-11');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(01, 5, '2017-11-11'),
+(20, 5, '2017-11-11'),
+(30, 5, '2017-11-14'),
+(94, 5, '2017-11-14'),
+(55, 5, '2017-12-14');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('5', '0', '2017-12-19'),
+('5', '5', '2017-12-24'),
+('5', '6', '2017-12-25');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(6, 'Foco nos estudos');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(6, 0, '2017-09-04');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(3, 6, '2017-09-05'),
+(7, 6, '2017-09-06'),
+(9, 6, '2017-09-06'),
+(12, 6, '2017-09-11'),
+(32, 6, '2017-10-04'),
+(24, 6, '2017-10-09'),
+(78, 6, '2017-11-10'),
+(55, 6, '2017-12-15');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('6', '2', '2017-11-19');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(7, 'Bom Dia!');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(7, 9, '2017-09-10');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(6, 7, '2017-09-10'),
+(7, 7, '2017-09-10'),
+(8, 7, '2017-09-10'),
+(13, 7, '2017-09-11'),
+(35, 7, '2017-10-08'),
+(87, 7, '2017-10-10'),
+(77, 7, '2017-11-15'),
+(61, 7, '2017-12-17');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('7', '1', '2017-12-19'),
+('7', '2', '2017-12-24'),
+('7', '4', '2017-12-24'),
+('7', '5', '2017-12-24'),
+('7', '6', '2017-12-25');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(8, 'Boa Noite.');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(8, 7, '2017-08-25');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(7, 8, '2017-08-26'),
+(12, 8, '2017-08-26'),
+(34, 8, '2017-08-26');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('8', '4', '2017-08-29');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO playlist
+VALUES
+(9, 'Hora Feliz');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Criacao
+VALUES
+(9, 9, '2017-12-25');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Composicao
+VALUES
+(7, 9, '2018-01-09'),
+(12, 9, '2018-01-10'),
+(13, 9, '2018-01-12'),
+(45, 9, '2018-01-15'),
+(33, 9, '2018-02-08'),
+(91, 9, '2018-02-10'),
+(17, 9, '2018-02-10'),
+(28, 9, '2018-02-10'),
+(34, 9, '2018-02-10');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Playlist_Seguir
+VALUES
+('9', '8', '2017-08-29'),
+('9', '1', '2017-08-29'),
+('9', '2', '2017-08-29'),
+('9', '3', '2017-08-29');
+COMMIT;
+
 /* Propagandas e anunciantes */
 START TRANSACTION;
 INSERT INTO Anunciante
