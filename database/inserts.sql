@@ -886,6 +886,146 @@ VALUES
 ('1', '3', '2017-12-13');
 COMMIT;
 
+/* Propagandas e anunciantes */
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(0, 'Spotify');
+COMMIT;
+/* Código do anunciante, anunciante */
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(0, 'Aproveite o desconto', 30, 224, 4000, 0);
+COMMIT;
+/* Codigo da propaganda, titulo, duraçao, reproduções, investimento, codigo do anunciante */
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(1, 'Opus');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(1, 'Ingressos', 45, 143, 2000, 1);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(2, 'Fender');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(2, 'Guitarra Fender.', 20, 234, 3400, 2);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(3, 'Google');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(3, 'Android.', 15, 301, 1300, 3);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(4, 'Aftermath Records');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(4, 'Dr. Dre', 20, 542, 2999, 4);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(5, 'Apple');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(5, 'Novo Iphone X', 30, 503, 5000, 5);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(6, 'HBO');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(6, 'Game Of Thrones', 25, 345, 3400, 6);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(7, 'Sony');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(7, 'Headphone XLR323', 23, 234, 2000, 7);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(8, 'Pink Floyd');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(8, 'Roger Waters: The Wall World Tour', 19, 345, 3240, 8);
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Anunciante
+VALUES
+(9, 'NET');
+COMMIT;
+
+START TRANSACTION;
+INSERT INTO Propaganda
+VALUES
+(9, 'Novos planos de 100MB!', 43, 135, 2000, 9);
+COMMIT;
+
+/* Concertos */
+START TRANSACTION;
+INSERT INTO Concerto
+VALUES
+(0, 'Welcome To Sky Valley', 'Porto Alegre', '40.0', '2017-12-27 20:40:00', 10),
+(1, 'Get Lucky', 'Canoas', '90.0', '2017-12-31 19:00:00', 2),
+(2, 'Led Zeppelin Reunite', 'Porto Alegre', '200.0', '2018-01-19 20:00:00', 0),
+(3, 'The Beattles: Love Me Do', 'Porto Alegre', '230.0', '2018-01-20 22:30:00', 1),
+(4, 'The Pharrel Williams Expirience', 'Novo Hamburgo', '140.0', '2018-01-28 21:45:00', 4),
+(5, 'Black Sabbath Reunion', 'Porto Alegre', '120.0', '2018-02-02 21:00:00', 9),
+(6, 'Black Sabbath Reunion', 'Canoas', '120.0', '2018-02-04 21:00:00', 9),
+(7, 'Panda Bear World Tour', 'Porto Alegre', '100.0', '2018-02-08 19:00:00', 7),
+(8, 'Nile Rogers South America Tour', 'Porto Alegre', '200.0', '2018-02-28 20:45:00', 8),
+(9, 'Julian Casablancas In Brazil', 'Porto Alegre', '180.0', '2018-03-05 21:15:00', 3);
+/* (ID, Nome do concerto, Cidade, Preço, Data e Hora, Artista que fará o show) */
+COMMIT;
+
 /* Reproduções */
 START TRANSACTION; INSERT INTO Reproducao VALUES ('2', '2017-10-27 03:41:11', '32'); COMMIT;
 START TRANSACTION; INSERT INTO Reproducao VALUES ('7', '2017-11-22 10:22:18', '103'); COMMIT;
