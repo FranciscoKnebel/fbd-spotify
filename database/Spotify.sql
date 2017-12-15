@@ -75,7 +75,7 @@ create table Genero (
 
 create table Pagamentos (
      data date not null,
-     valor decimal(4,2) not null,
+     valor decimal(9,2) not null,
      id_usuario int not null);
 
 create table Playlist (
@@ -121,7 +121,7 @@ create table Propaganda (
      titulo varchar(50) not null,
      duracao bigint not null,
      reproducoes bigint not null,
-     investimento decimal(7,2) not null,
+     investimento decimal(9,2) not null,
      id_anunciante int not null,
      constraint ID_Propaganda_ID primary key (id_propaganda));
 
