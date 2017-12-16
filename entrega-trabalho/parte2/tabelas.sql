@@ -1,7 +1,5 @@
 -- Francisco Knebel
 -- Mateus Salvi
---
--- 15/12/2017
 
 
 -- Database Section
@@ -450,3 +448,4 @@ BEFORE DELETE ON `Reproducao`
 FOR EACH ROW UPDATE Musica
 SET Musica.contador = Musica.contador - 1
 WHERE Musica.id_musica = old.id_musica;
+
